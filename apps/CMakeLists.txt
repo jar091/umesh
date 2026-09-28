@@ -29,6 +29,18 @@ target_link_libraries(umeshInfo
   )
 
 # ------------------------------------------------------------------
+# merges several umesh files (e.g., neighbouring parts of a
+# data-parallel decomposition) into one; shared vertices are not merged
+# ------------------------------------------------------------------
+add_executable(umeshMergeParts
+  mergeParts.cpp
+  )
+target_link_libraries(umeshMergeParts
+  PUBLIC
+  umesh
+  )
+
+# ------------------------------------------------------------------
 # print basic info of a umesh: #verts, tris, quads, tets, etc, as well
 # as bounding box.
 # ------------------------------------------------------------------
