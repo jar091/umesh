@@ -183,6 +183,24 @@ bounds : [(-300,-100,-100):(300,100,100)]
 values : [0:96.9123]
 ```
 
+## BHAC GRMHD snapshots: `bhac2umesh`
+
+Converts a BHAC (MPI-AMRVAC) `dataNNNN.dat` snapshot on a spherical
+modified-Kerr-Schild grid into N spatially coherent `.umesh` parts
+(hexes/wedges, one per-vertex scalar). See
+[converters/bhac2umesh/README.md](converters/bhac2umesh/README.md).
+
+    ./bhac2umesh data0100.dat --par amrvac.par -o torus -n 8 --var rho
+
+## Decomposed OpenFOAM cases: `foam2umesh`
+
+Converts a decomposed binary OpenFOAM case (`processorN/constant/polyMesh`
+plus one cell-centred scalar/vector field) into N stand-alone `.umesh`
+parts; general polyhedra are decomposed into tets/pyramids. Requires
+OpenMP. See [converters/foam2umesh/README.md](converters/foam2umesh/README.md).
+
+    ./foam2umesh --case <case> -n 64 -o out/part --field p
+
 ## OFF
 
 pretty old, OBJ-like format (most famously, the jets dataset)

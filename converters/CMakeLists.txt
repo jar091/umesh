@@ -15,6 +15,8 @@
 # ======================================================================== #
 
 add_subdirectory(vtu)
+add_subdirectory(bhac2umesh)
+add_subdirectory(foam2umesh)
 
 # ------------------------------------------------------------------
 # tools: big lander (the large nasa lander that comes in multiple
